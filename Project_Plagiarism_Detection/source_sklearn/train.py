@@ -4,7 +4,9 @@ import argparse
 import os
 import pandas as pd
 
+from sklearn import svm
 from sklearn.externals import joblib
+
 
 ## TODO: Import any additional libraries you need to define a model
 
@@ -53,14 +55,14 @@ if __name__ == '__main__':
     
     
     ## --- Your code here --- ##
-    
+    C = 1.0
 
     ## TODO: Define a model 
-    model = None
+    model = svm.SVC(kernel="linear", C=C, decision_function_shape="ovr")
     
     
     ## TODO: Train the model
-    
+    model.fit(train_x,train_y)
     
     
     ## --- End of your code  --- ##
